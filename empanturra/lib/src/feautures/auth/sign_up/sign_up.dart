@@ -20,8 +20,8 @@ class _SignUpState extends State<SignUp> {
   final TextEditingController _controllerEmail = TextEditingController();
   final TextEditingController _controllerPhone = TextEditingController();
   final TextEditingController _controllerPassword = TextEditingController();
-
   final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,6 +42,10 @@ class _SignUpState extends State<SignUp> {
                 ),
                 const CustomLabelText(text: 'Nome'),
                 CustomizeTextFiled(
+                  hintText: 'informe o seu nome',
+                  suffixIcon: Icons.person_outline_rounded,
+                  textInputType: TextInputType.name,
+                  controller: _controllerName,
                   validator: (value) {
                     String valueNotNull = value ?? '';
                     if (valueNotNull.isEmpty) {
@@ -49,10 +53,6 @@ class _SignUpState extends State<SignUp> {
                     }
                     return null;
                   },
-                  controller: _controllerName,
-                  hintText: 'informe o seu nome',
-                  suffixIcon: Icons.person_outline_rounded,
-                  textInputType: TextInputType.name,
                 ),
                 const CustomLabelText(text: 'E-mail'),
                 CustomizeTextFiled(
@@ -101,27 +101,20 @@ class _SignUpState extends State<SignUp> {
                   text: 'Registrar',
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
                           backgroundColor: Colors.black,
                           content: Text(
                             'Registro feito com sucesso',
                             style: TextStyle(color: Colors.white),
-                          )));
+                          ),
+                        ),
+                      );
                       Navigator.push(
                         context,
                         (MaterialPageRoute(
                           builder: (_) => const Home(),
                         )),
-                      );
-                    } else {
-                      return ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          backgroundColor: Colors.red,
-                          content: Text(
-                            'Ocorreu um erro ao registrar',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ),
                       );
                     }
                   },
@@ -134,7 +127,9 @@ class _SignUpState extends State<SignUp> {
                 QuestionAccount(
                   textQuestion: 'Já tem uma conta?',
                   textButton: 'Entrar',
-                  onPressed: () {},
+                  onPressed:(){
+                    Navigator.push(context, MaterialPageRoute(builder: (_) => const SignUp()));
+                  },
                 )
               ],
             ),
