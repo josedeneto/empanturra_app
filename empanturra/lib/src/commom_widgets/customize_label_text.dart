@@ -6,7 +6,7 @@ class CustomLabelText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 5, top: 12),
+      padding: const EdgeInsets.only(top: 8),
       child: Text(
         text.toUpperCase(),
         style: TextStyle(

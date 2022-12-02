@@ -1,7 +1,6 @@
 import 'package:empanturra/src/feautures/auth/sign_in/sign_in.dart';
 import 'package:flutter/material.dart';
 
-import 'src/feautures/auth/sign_up/sign_up.dart';
 
 void main() {
   runApp(const MyApp());

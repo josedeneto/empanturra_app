@@ -1,4 +1,3 @@
-import 'package:empanturra/src/models/user_model.dart';
 import 'package:empanturra/src/page/home/home.dart';
 import 'package:flutter/material.dart';
 
@@ -108,16 +107,22 @@ class _SignUpState extends State<SignUp> {
                             'Registro feito com sucesso',
                             style: TextStyle(color: Colors.white),
                           )));
-                      Navigator.push(context,
-                          (MaterialPageRoute(builder: (_) => const Home())));
+                      Navigator.push(
+                        context,
+                        (MaterialPageRoute(
+                          builder: (_) => const Home(),
+                        )),
+                      );
                     } else {
-                      return ScaffoldMessenger.of(context)
-                          .showSnackBar(const SnackBar(
-                              backgroundColor: Colors.red,
-                              content: Text(
-                                'Ocorreu um erro ao registrar',
-                                style: TextStyle(color: Colors.white),
-                              )));
+                      return ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          backgroundColor: Colors.red,
+                          content: Text(
+                            'Ocorreu um erro ao registrar',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      );
                     }
                   },
                 ),
