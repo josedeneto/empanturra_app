@@ -44,7 +44,8 @@ class _SignUpState extends State<SignUp> {
                 const CustomLabelText(text: 'Nome'),
                 CustomizeTextFiled(
                   validator: (value) {
-                    if (value.isEmpty) {
+                    String valueNotNull = value ?? '';
+                    if (valueNotNull.isEmpty) {
                       return 'Este campo não pode ser nulo';
                     }
                     return null;
@@ -61,7 +62,8 @@ class _SignUpState extends State<SignUp> {
                   suffixIcon: Icons.email_outlined,
                   textInputType: TextInputType.emailAddress,
                   validator: (value) {
-                    if (value.isEmpty) {
+                    String valueNotNull = value ?? '';
+                    if (valueNotNull.isEmpty) {
                       return 'Este campo não pode ser nulo';
                     }
                     return null;
@@ -73,9 +75,9 @@ class _SignUpState extends State<SignUp> {
                   hintText: 'informe o seu telefone',
                   suffixIcon: Icons.phone_android_outlined,
                   textInputType: TextInputType.phone,
-               
                   validator: (value) {
-                    if (value.isEmpty) {
+                    String valueNotNull = value ?? '';
+                    if (valueNotNull.isEmpty) {
                       return 'Este campo não pode ser nulo';
                     }
                     return null;
@@ -88,10 +90,9 @@ class _SignUpState extends State<SignUp> {
                   textInputType: TextInputType.text,
                   obscureText: true,
                   suffixIcon: Icons.lock_outline_rounded,
-             
                   validator: (value) {
-                    _controllerPassword.text = value;
-                    if (value.isEmpty) {
+                    String valueNotNull = value ?? '';
+                    if (valueNotNull.isEmpty) {
                       return 'Este campo não pode ser nulo';
                     }
                     return null;

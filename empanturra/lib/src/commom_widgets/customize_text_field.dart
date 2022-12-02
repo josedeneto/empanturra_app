@@ -21,7 +21,7 @@ class CustomizeTextFiled extends StatefulWidget {
   final bool isSecret;
   final IconData suffixIcon;
   final bool isPasswordField;
-   final String? Function(String value) validator;
+   final String? Function(String? value) validator;
   final TextEditingController controller;
   @override
   State<CustomizeTextFiled> createState() => _CustomizeTextFiledState();
@@ -33,7 +33,7 @@ class _CustomizeTextFiledState extends State<CustomizeTextFiled> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
       child: TextFormField(
-        validator:widget.validator(value),
+        validator:widget.validator,
         controller: widget.controller,
         keyboardType:widget.textInputType,
         cursorColor: Colors.yellow[700],
