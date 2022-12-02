@@ -102,10 +102,22 @@ class _SignUpState extends State<SignUp> {
                   text: 'Registrar',
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
-                      Navigator.push(
-                          context, (MaterialPageRoute(builder: (_) => Home())));
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                          backgroundColor: Colors.black,
+                          content: Text(
+                            'Registro feito com sucesso',
+                            style: TextStyle(color: Colors.white),
+                          )));
+                      Navigator.push(context,
+                          (MaterialPageRoute(builder: (_) => const Home())));
                     } else {
-                      return 'nonono';
+                      return ScaffoldMessenger.of(context)
+                          .showSnackBar(const SnackBar(
+                              backgroundColor: Colors.red,
+                              content: Text(
+                                'Ocorreu um erro ao registrar',
+                                style: TextStyle(color: Colors.white),
+                              )));
                     }
                   },
                 ),
