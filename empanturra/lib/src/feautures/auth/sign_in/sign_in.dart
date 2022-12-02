@@ -1,4 +1,6 @@
 import 'package:empanturra/src/commom_widgets/customize_text_button.dart';
+import 'package:empanturra/src/feautures/auth/forgot_password/forgot_password_page.dart';
+import 'package:empanturra/src/feautures/auth/sign_up/sign_up.dart';
 import 'package:empanturra/src/page/home/home.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +21,7 @@ class SignIn extends StatefulWidget {
 class _SignInState extends State<SignIn> {
   final TextEditingController _controllerEmail = TextEditingController();
   final TextEditingController _controllerPassword = TextEditingController();
-  final _formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState>  _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,13 +72,24 @@ class _SignInState extends State<SignIn> {
                     Align(
                       alignment: Alignment.centerRight,
                       child: CustomizeTextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (_)=>const ForgotPasswordPage()));
+                        },
                         textButton: 'Esqueceu a senha?',
                       ),
                     ),
                     CustomizeButton(
                       text: 'Entrar',
-                      onPressed: () {},
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const Home(),
+                            ),
+                          );
+                        } 
+                      },
                     ),
                     CustomOutlinedButton(
                       text: 'Entrar com facebook',
@@ -87,22 +100,7 @@ class _SignInState extends State<SignIn> {
                       textQuestion: 'Não tens conta?',
                       textButton: 'Registrar',
                       onPressed: () {
-                        if (_formKey.currentState!.validate()) {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) => const Home(),
-                            ),
-                          );
-                        } else {
-                          ScaffoldMessenger.of(context)
-                              .showSnackBar(const SnackBar(
-                                  backgroundColor: Colors.red,
-                                  content: Text(
-                                    'Ocorreu um erro, por favor tente novamente',
-                                    style: TextStyle(color: Colors.white),
-                                  )));
-                        }
+                        Navigator.push(context, MaterialPageRoute(builder: (_)=>const SignUp()));
                       },
                     )
                   ],

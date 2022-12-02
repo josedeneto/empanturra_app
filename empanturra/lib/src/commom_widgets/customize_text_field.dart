@@ -32,28 +32,25 @@ class _CustomizeTextFiledState extends State<CustomizeTextFiled> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
-      child: SizedBox(
-        height: 50,
-        child: TextFormField(
-          validator:widget.validator,
-          controller: widget.controller,
-          keyboardType:widget.textInputType,
-          cursorColor: Colors.yellow[700],
-          cursorRadius: const Radius.circular(10),
-          style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-          obscureText:widget.obscureText,
-          decoration: InputDecoration(
-            contentPadding: const EdgeInsets.only(bottom: 51),
-            hintText: widget.hintText,
-            hintStyle: const TextStyle(fontWeight: FontWeight.w600, color: Colors.black87),
-            suffixIcon: Icon(widget.suffixIcon, color: Colors.black,),
-              enabledBorder:   UnderlineInputBorder(borderSide: BorderSide(color: Colors.grey.shade300,style: BorderStyle.solid),
-              ),
-              border: const UnderlineInputBorder(borderSide: BorderSide( color: Colors.yellow,)
-              ),
-              focusedBorder:const UnderlineInputBorder(borderSide: BorderSide(color: Colors.blue,style: BorderStyle.solid)),
-              ),
-        ),
+      child: TextFormField(
+        validator:widget.validator,
+        controller: widget.controller,
+        keyboardType:widget.textInputType,
+        cursorColor: Colors.yellow[700],
+        cursorRadius: const Radius.circular(10),
+        style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+        obscureText:widget.obscureText,
+        decoration: InputDecoration(
+          
+          hintText: widget.hintText,
+          hintStyle: const TextStyle(fontWeight: FontWeight.w600, color: Colors.black87),
+          suffixIcon: Icon(widget.suffixIcon, color: Colors.black,),
+            enabledBorder:   UnderlineInputBorder(borderSide: BorderSide(color: Colors.grey.shade300,style: BorderStyle.solid),
+            ),
+            border: const UnderlineInputBorder(borderSide: BorderSide( color: Colors.yellow,)
+            ),
+            focusedBorder:const UnderlineInputBorder(borderSide: BorderSide(color: Colors.blue,style: BorderStyle.solid)),
+            ),
       ),
     );
   }
