@@ -1,5 +1,4 @@
 import 'package:empanturra/src/commom_widgets/customize_text_button.dart';
-import 'package:empanturra/src/feautures/auth/forgot_password/forgot_password_page.dart';
 import 'package:empanturra/src/feautures/auth/sign_up/sign_up.dart';
 import 'package:empanturra/src/page/home/home.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +9,7 @@ import '../../../commom_widgets/customize_outlined_button.dart';
 import '../../../commom_widgets/customize_question_account.dart';
 import '../../../commom_widgets/customize_text_field.dart';
 import '../../../commom_widgets/customize_title.dart';
+import 'components/forgot_password/forgot_password_page.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);

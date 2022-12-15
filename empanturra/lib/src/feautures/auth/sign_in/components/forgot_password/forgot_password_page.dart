@@ -5,7 +5,7 @@ import 'package:empanturra/src/commom_widgets/customize_text_field.dart';
 import 'package:empanturra/src/commom_widgets/customize_title.dart';
 import 'package:flutter/material.dart';
 
-import '../sign_in/sign_in.dart';
+import '../../sign_in.dart';
 import 'components/sent_with_sucess_component.dart';
 
 class ForgotPasswordPage extends StatefulWidget {

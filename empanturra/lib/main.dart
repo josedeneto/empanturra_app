@@ -1,6 +1,8 @@
 import 'package:empanturra/src/feautures/auth/sign_in/sign_in.dart';
 import 'package:flutter/material.dart';
 
+import 'src/feautures/auth/verify_number_otp/verify_number.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -19,6 +21,6 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.yellow,
           fontFamily: 'Poppins',
         ),
-        home: const SignIn());
+        home: const VerifyNumber());
   }
 }
